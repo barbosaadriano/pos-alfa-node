@@ -12,7 +12,7 @@ const PokemonModel = mongoose.model('Pokemon', pokemonSchema);
 let query;
 
 http.createServer((request, response) => {
-	response.writeHead(200, {"Content-Type": "application/json;charset=utf-8"})
+	response.writeHead(200, {"Content-Type": "application/JSON;charset=utf-8"})
 	const url = request.url
 	console.log(url)
 	switch(url) { 
@@ -28,8 +28,7 @@ http.createServer((request, response) => {
 			PokemonModel.find(query, function (err, data) {
 				if (err) return console.log('ERRO: ', err);
 				//return console.log('Buscou:', data);
-				response.write(JSON.stringify(data))
-				response.end()
+				response.end(JSON.stringify(data))
 			})
 			
 		break
