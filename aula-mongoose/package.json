@@ -1,0 +1,27 @@
+{
+  "name": "aula-mongoose",
+  "version": "1.0.0",
+  "description": "Projeto da aula de MEAN",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barbosaadriano/pos-alfa-node.git"
+  },
+  "keywords": [
+    "mean",
+    "suissa",
+    "aula"
+  ],
+  "author": "adriano barbosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barbosaadriano/pos-alfa-node/issues"
+  },
+  "homepage": "https://github.com/barbosaadriano/pos-alfa-node#readme",
+  "dependencies": {
+    "mongoose": "^4.5.8"
+  }
+}
