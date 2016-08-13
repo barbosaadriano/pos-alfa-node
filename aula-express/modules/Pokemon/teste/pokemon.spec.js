@@ -19,6 +19,17 @@ describe('Pokemon module',()=>{
 			Controller.find(query,callback);
 		});
 	});	
+	describe('Find one',()=>{
+		it('Deve retornar um objeto', (done)=>{
+			var query = {name:'Teste'}
+			var callback = (err,data) => {
+				assert.equal(null,err,'Erro não é nulo')
+				assert.equal(0,data.length,'Lista não veio vazia...')
+				done()
+			}
+			Controller.findOne(query,callback);
+		});
+	});	
 	describe('Create',(done)=>{
 		it('Quando cadastrar, o retorno deve ser o mesmo objeto adicionadado, _id', ()=>{
 			var mod = {
@@ -35,8 +46,8 @@ describe('Pokemon module',()=>{
 			Controller.create(mod,callback);
 		});
 	});	
-	describe('Update',(done)=>{
-		it('Quando atualizar, {"ok":1,"nModified":0,"n":1}', ()=>{
+	describe('Update',()=>{
+		it('Quando atualizar, {"ok":1,"nModified":0,"n":1}', (done)=>{
 			var mod = {
 				name: 'Mudanca'
 				,attack: 9001
@@ -50,8 +61,19 @@ describe('Pokemon module',()=>{
 			Controller.update({},mod,callback);
 		});
 	});
-	describe('Deletar',(done)=>{
-		it('Quando deletar {"ok":1,"n":1}', ()=>{
+	describe('Find one',()=>{
+		it('Deve retornar um objeto', (done)=>{
+			var query = {name:'Teste'}
+			var callback = (err,data) => {
+				assert.equal(null,err,'Erro não é nulo')
+				assert.equal(0,data.length,'Lista não veio vazia...')
+				done()
+			}
+			Controller.findOne(query,callback);
+		});
+	});	
+	describe('Deletar',()=>{
+		it('Quando deletar {"ok":1,"n":1}', (done)=>{
 			var qry = {}
 			var callback = (err,data) => {
 				assert.equal(1, data.ok)
