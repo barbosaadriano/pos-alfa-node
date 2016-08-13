@@ -1,9 +1,9 @@
 require('./../../../db/config-test')
 const assert = require('assert');
-const Controller = require('./../crud.js')
+const Controller = require('./../controller.js')
 
 describe('Pokemon module',()=>{
-	after( (done) => {
+	before( (done) => {
 		let Model = require('./../model')
 		Model.remove({})
 		done()
@@ -12,7 +12,8 @@ describe('Pokemon module',()=>{
 		it('Deve retornar um Array VAZIO', (done)=>{
 			var query = {}
 			var callback = (err,data) => {
-				assert.equal([],data,'lista veio vazia')
+				assert.equal(null,err,'Erro não é nulo')
+				assert.equal(0,data.length,'Lista não veio vazia...')
 				done()
 			}
 			Controller.find(query,callback);
