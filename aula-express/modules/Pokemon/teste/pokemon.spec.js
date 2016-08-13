@@ -27,7 +27,7 @@ describe('Pokemon module',()=>{
 				,defense: 8001
 			}
 			var callback = (err,data) => {
-				//assert.equal(mod,data,'lista veio vazia')
+				//assert.equal(mod,data,'lista veio vazia')//
 				assert.notEqual(undefined,data._id)
 				assert.equal('Object',typeof data._id)
 				done()
