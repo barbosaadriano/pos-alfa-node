@@ -14,13 +14,13 @@ describe('Pokemon module',()=>{
 	describe('Create',()=>{
 		it('Quando cadastrar, o retorno deve ser o mesmo objeto adicionadado, _id', ()=>{
 			var mod = {
-				_id: null
-				,name: 'Teste'
+				name: 'Teste'
 				,attack: 9001
 				,defense: 8001
 			}
 			var callback = (err,data) => {
-				assert.equal(mod,data,'lista veio vazia')
+				//assert.equal(mod,data,'lista veio vazia')
+				assert.notEqual(undefined,data._id)
 			}
 			Controller.create(mod,callback);
 		});
