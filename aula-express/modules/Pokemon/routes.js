@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const CRUD = require('./CRUD');
+const CRUD = require('./crud');
 
 router.get('/', CRUD.find);
-//router.get('/:id', Controller.findOne);
-//router.put('/:id', Controller.update);
-//router.delete('/:id', Controller.remove);
+router.get('/:id', CRUD.findOne);
+router.put('/:id', CRUD.update);
+router.delete('/:id', CRUD.remove);
 router.post('/',CRUD.create);
 
 module.exports = router;

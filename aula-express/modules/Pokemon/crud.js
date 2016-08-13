@@ -23,7 +23,7 @@ const CRUD ={
 		})
 	},
 	//definindo a operacao localizar 1
-/*	findOne: (req, res) => {
+	findOne: (req, res) => {
 		let query = {_id:req.params.id};
 		controller.findOne(query, function (err, data) {
 			if (err) return console.log('ERRO: ', err);
@@ -46,7 +46,7 @@ const CRUD ={
 			if (err) return console.log('ERRO: ', err);
 			res.json(data);
 		})
-	}*/
+	}
 }
 //exportando o modulo
 module.exports = CRUD;

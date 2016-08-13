@@ -34,5 +34,33 @@ describe('Pokemon module',()=>{
 			}
 			Controller.create(mod,callback);
 		});
+	});	
+	describe('Update',(done)=>{
+		it('Quando atualizar, {"ok":1,"nModified":0,"n":1}', ()=>{
+			var mod = {
+				name: 'Mudanca'
+				,attack: 9001
+				,defense: 8001
+			}
+			var callback = (err,data) => {
+				assert.equal(1, data.ok)
+				assert.equal(true, (data.n>0))
+				done()
+			}
+			Controller.update({},mod,callback);
+		});
 	});
+	describe('Deletar',(done)=>{
+		it('Quando deletar {"ok":1,"n":1}', ()=>{
+			var qry = {}
+			var callback = (err,data) => {
+				assert.equal(1, data.ok)
+				assert.equal(true, (data.n>0))
+				done()
+			}
+			Controller.remove(qry,callback);
+		});
+	});
+
+
 });
