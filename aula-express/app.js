@@ -1,4 +1,6 @@
+//requerindo o arquivo de configuraçao do banco
 require('./db/config.js');
+//requerindo o express
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -6,9 +8,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+///refinindo as rotas
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var poks = require('./routes/pokemons');
+var poks = require('./modules/Pokemon/routes');
 
 var app = express();
 
@@ -24,9 +27,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+///usando as rotas
 app.use('/', routes);
 app.use('/users', users);
-app.use('/pokemons', poks);
+app.use('/api/pokemons', poks);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
