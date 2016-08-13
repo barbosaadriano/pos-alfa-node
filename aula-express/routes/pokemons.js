@@ -49,7 +49,7 @@ router.delete('/:id', function(req, res, next) {
 			})
 
 });
-router.put('/',function(req, res, next) {
+router.post('/',function(req, res, next) {
 			let mod = req.body
 			PokemonModel.create(mod, function (err, data) {
 				if (err) return console.log('ERRO: ', err);
